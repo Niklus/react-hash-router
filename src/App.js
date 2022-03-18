@@ -15,9 +15,6 @@ function App() {
 
   useEffect(()=>{
     window.addEventListener("hashchange", handleHashChange);
-    return () => {
-      // no need for cleanup here since we are never unmounting the App Component
-    }
   },[]); // empty array means run only once to avoid adding multiple listeners hence no memory leaks
 
   return (
