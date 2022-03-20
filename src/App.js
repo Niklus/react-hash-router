@@ -17,13 +17,17 @@ function App() {
     window.addEventListener("hashchange", handleHashChange);
   },[]); // empty array means run only once to avoid adding multiple listeners hence no memory leaks
 
+  const routes = {
+    "": <Home />,
+    "#home": <Home />,
+    "#about": <About />,
+    "#contact": <Contact />,
+  };
+
   return (
     <>
       <Header />
-      {hash === "" && <Home />}
-      {hash === "#home" && <Home />}
-      {hash === "#about" && <About />}
-      {hash === "#contact" && <Contact />}
+      {routes[hash]}
     </>
   );
 }
